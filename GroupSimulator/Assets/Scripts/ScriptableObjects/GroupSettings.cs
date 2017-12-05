@@ -1,20 +1,37 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 
-[CreateAssetMenu(menuName="Settings/GroupSettings")]
+[CreateAssetMenu(menuName = "Settings/GroupSettings")]
 public class GroupSettings : ScriptableObject {
 
     [Header("Inner-Group Settings:")]
     [Tooltip("The amount of people within the groups")]
-    [SerializeField, Range(0, 10)] protected int membersInGroups;
+    [SerializeField, Range(2, 10)] protected int membersInGroups;
 
     [Tooltip("The variance from the origin orientation for the group")]
-    [SerializeField, Range(-50f, 50f)] protected float orientationVariance;
+    [SerializeField, Range(-90f, 90f)] protected float orientationVariance;
 
     [Tooltip("The distance from the group origin, how big is the group?")]
     [SerializeField, Range(1, 5f)] protected float interGroupDistance;
+
+    [Tooltip("The arc in degrees the group is standing in")]
+    [SerializeField, Range(0, 360f)] protected float groupArc;
+
+    // The action to fire if we changed the values of this object, to be able to update the visuals live in the simulation
+    public event Action OnValuesChanged;
+
+    void Awake() {
+        // We need to clear the action to avoid errors
+        OnValuesChanged = null;
+    }
+
+    public void UpdateVisuals() {
+        if (OnValuesChanged != null)
+            OnValuesChanged();
+    }
 
     /// <summary>
     /// The amount of people within the groups
@@ -28,4 +45,8 @@ public class GroupSettings : ScriptableObject {
     /// The distance from the group origin, how big is the group?
     /// </summary>
     public float InterGroupDistance { get { return interGroupDistance; } }
+    /// <summary>
+    /// The arc in degrees the group is standing in
+    /// </summary>
+    public float GroupArc { get { return groupArc; } }
 }

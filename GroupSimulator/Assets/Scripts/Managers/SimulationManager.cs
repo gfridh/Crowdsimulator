@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,8 +17,10 @@ public class SimulationManager : MonoBehaviour {
     private RandomGenerator randomGenerator;
     private GroupSettings currentSettings;
     private CsvWriter dataWriter;
+    private bool testHasStarted;
     private bool testIsRunning;
 
+    private DateTime scenarioStarts;
 
     public bool TestIsRunning { get { return testIsRunning; } }
 
@@ -29,7 +32,8 @@ public class SimulationManager : MonoBehaviour {
             randomGenerator = new RandomGenerator(126789);
             dataWriter = new CsvWriter();
             dataWriter.CreateHeaders();
-            testIsRunning = true;
+            testIsRunning = false;
+            testHasStarted = false;
         } else {
             Destroy(gameObject);
         }
@@ -40,7 +44,16 @@ public class SimulationManager : MonoBehaviour {
         if (groupGenerator == null) {
             Debug.LogError("Could not find the GroupGenerator on this gameobject");
         }
-        StartSimulation();
+
+        Debug.Log("Session has started. Press SPACEBAR to start the scenarios");
+    }
+
+    void Update() {
+        if (!testHasStarted && !testIsRunning && Input.GetKeyDown(KeyCode.Space)) {
+            StartSimulation();
+            testHasStarted = true;
+            testIsRunning = true;
+        }
     }
 
     /// <summary>
@@ -48,6 +61,7 @@ public class SimulationManager : MonoBehaviour {
     /// </summary>
     public void StartSimulation() {
         testerCamera.transform.position = new Vector3(0f, 0f, -5f);
+        scenarioStarts = DateTime.Now;
         int index = randomGenerator.Range(0, scenarios.Count);
         groupGenerator.GenerateGroups(scenarios[index]);
         currentSettings = scenarios[index];
@@ -58,7 +72,7 @@ public class SimulationManager : MonoBehaviour {
     /// Called when the camera animation has finished playing
     /// </summary>
     public void NextScenario(float distance, int welcomeFactor) {
-        dataWriter.SaveRow(currentSettings, distance, welcomeFactor);
+        dataWriter.SaveRow(currentSettings, distance, welcomeFactor, (float)(DateTime.Now - scenarioStarts).TotalSeconds);
 
         if (scenarios.Count > 0) {
             // First we clear then we create new groups
@@ -70,6 +84,8 @@ public class SimulationManager : MonoBehaviour {
             Debug.Log("Testing is DONE. Writing data to file");
             dataWriter.WriteToFile();
             testIsRunning = false;
+            testerCamera.transform.position = new Vector3(0f, 0f, -5f);
+            groupGenerator.ClearGroups();
         }
     }
 }

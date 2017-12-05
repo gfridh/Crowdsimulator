@@ -11,22 +11,29 @@ public class CsvWriter {
 
 
     public void CreateHeaders() {
-        string[] rowDataHeaders = new string[4];
-        rowDataHeaders[0] = "GroupSize";
-        rowDataHeaders[1] = "GroupOrientation";
-        rowDataHeaders[2] = "DistanceFromGroup";
-        rowDataHeaders[3] = "WelcomedFactor";
+        string[] rowDataHeaders = new string[7];
+        rowDataHeaders[0] = "MemberCount";
+        rowDataHeaders[1] = "GroupSize";
+        rowDataHeaders[2] = "GroupOrientation";
+        rowDataHeaders[3] = "GroupArc";
+        rowDataHeaders[4] = "DistanceFromGroup";
+        rowDataHeaders[5] = "WelcomedFactor";
+        rowDataHeaders[6] = "ScenarioLength";
         rowData.Add(rowDataHeaders);
     }
 
-    public void SaveRow(GroupSettings settings, float distance, int welcomedFactor) {
-        Debug.Log("Recording Data: GroupSize " + settings.InterGroupDistance + ", GroupOrientation " + settings.OrientationVariance + ", Distance " + distance + ",  WelcomedFactor " + welcomedFactor);
+    public void SaveRow(GroupSettings settings, float distance, int welcomedFactor, float scenarioLength) {
+        Debug.Log("Recording Data: MemberCount " + settings.MembersInGroups + " ,GroupSize" + settings.InterGroupDistance + ", GroupOrientation " + settings.OrientationVariance 
+            + ", GroupArc " + settings.GroupArc +  ", Distance " + distance + ",  WelcomedFactor " + welcomedFactor + ", ScenarioLength " + scenarioLength);
 
-        string[] rowData = new string[4];
-        rowData[0] = settings.InterGroupDistance.ToString();
-        rowData[1] = settings.OrientationVariance.ToString();
-        rowData[2] = distance.ToString();
-        rowData[3] = welcomedFactor.ToString();
+        string[] rowData = new string[7];
+        rowData[0] = settings.MembersInGroups.ToString();
+        rowData[1] = settings.InterGroupDistance.ToString();
+        rowData[2] = settings.OrientationVariance.ToString();
+        rowData[3] = settings.GroupArc.ToString();
+        rowData[4] = distance.ToString();
+        rowData[5] = welcomedFactor.ToString();
+        rowData[6] = scenarioLength.ToString();
         this.rowData.Add(rowData);
     }
 

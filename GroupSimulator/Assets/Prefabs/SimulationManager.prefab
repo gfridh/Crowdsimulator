@@ -82,33 +82,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scenarios:
-  - {fileID: 11400000, guid: f52f8b590cae706408a396a04c9d8e49, type: 2}
-  - {fileID: 11400000, guid: 4c1114537d4b2444a86d9e9989702ffc, type: 2}
-  - {fileID: 11400000, guid: 8a5426056f5e40e40be49b59c2b1bd5b, type: 2}
-  - {fileID: 11400000, guid: 3791f742a90ff474d8b796fafa1f1356, type: 2}
-  - {fileID: 11400000, guid: 65ae01facdc1815468172c9b02bede65, type: 2}
-  - {fileID: 11400000, guid: 62c780ade215dc44ba3173f00bd20dea, type: 2}
-  - {fileID: 11400000, guid: 27ea562df9ad8a04e944b24065510e1b, type: 2}
-  - {fileID: 11400000, guid: 6a6a0a2173c617b42a583387ffac4d8a, type: 2}
-  - {fileID: 11400000, guid: b05a0117d08fcfa4b8b18eebfa61e20f, type: 2}
-  - {fileID: 11400000, guid: 4a87f8036ab3de2409cbd17f3cf50102, type: 2}
-  - {fileID: 11400000, guid: 4437592e3b9b69d4fba8b332783d2aa4, type: 2}
-  - {fileID: 11400000, guid: 6309d969708bc2d4e8a7a10cbff96236, type: 2}
-  - {fileID: 11400000, guid: 7416e7458723098448c7780634bb1302, type: 2}
-  - {fileID: 11400000, guid: ac8d66114a08b004684d8b01c1716c4d, type: 2}
-  - {fileID: 11400000, guid: 819352602c345df49a1bb9a4629eb4ff, type: 2}
-  - {fileID: 11400000, guid: 74fb031b551a27e469e675482f67268b, type: 2}
-  - {fileID: 11400000, guid: e6e141a02b243a54c96e45a76ef8c8d1, type: 2}
-  - {fileID: 11400000, guid: d690a44d0e4645c40903b22d3038bad9, type: 2}
-  - {fileID: 11400000, guid: 01d5cf4d4c817fe409e8193d94106eaf, type: 2}
-  - {fileID: 11400000, guid: 3bb4c523821a09340a0a04bb9ef15c9d, type: 2}
-  - {fileID: 11400000, guid: 7b64450549b465343a8dd77bf500db41, type: 2}
-  - {fileID: 11400000, guid: 49310fafc9bc6de4aab1bedcf1b665a0, type: 2}
-  - {fileID: 11400000, guid: 5147fb9bf24cbee49a36ff98e0da66cc, type: 2}
-  - {fileID: 11400000, guid: ec5ac216beb4e374287b810adad0c1ae, type: 2}
-  - {fileID: 11400000, guid: c9e24eda80a17814280581230e7d38a0, type: 2}
-  - {fileID: 11400000, guid: 971282c9e2e7a264cb018474b73746d4, type: 2}
-  - {fileID: 11400000, guid: 93fd5f1a767818a4eb12845712cf9dd3, type: 2}
+  - {fileID: 11400000, guid: 28502ff2f9998904e95c71709775a3f4, type: 2}
   testerCamera: {fileID: 0}
 --- !u!114 &114156482684424770
 MonoBehaviour:
@@ -124,3 +98,4 @@ MonoBehaviour:
   groupParent: {fileID: 4993380755891780}
   humanPrefab: {fileID: 1392251784496092, guid: 68907ce7d18b1754e948637dd2226949,
     type: 2}
+  enableScaleFactor: 1

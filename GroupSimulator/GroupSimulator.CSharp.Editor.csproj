@@ -118,6 +118,9 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>Library\UnityAssemblies\SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
+    <Reference Include="Assembly-UnityScript">
+      <HintPath>Library\ScriptAssemblies\Assembly-UnityScript.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="GroupSimulator.CSharp.csproj">
@@ -126,7 +129,58 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\OculusPlatform\Editor\GUIHelper.cs" />
+    <Compile Include="Assets\OculusPlatform\Editor\OculusPlatformSettingsEditor.cs" />
+    <Compile Include="Assets\OSPNative\editor\ONSPAudioSourceEditor.cs" />
+    <Compile Include="Assets\OSPNative\editor\ONSPReflectionCustomGUI.cs" />
+    <Compile Include="Assets\OVR\Editor\OVRBuild.cs" />
+    <Compile Include="Assets\OVR\Editor\OVRLayerAttributeEditor.cs" />
+    <Compile Include="Assets\OVR\Editor\OVRManifestPreprocessor.cs" />
+    <Compile Include="Assets\OVR\Editor\OVRMoonlightLoader.cs" />
+    <Compile Include="Assets\OVR\Editor\OVRPluginUpdater.cs" />
+    <Compile Include="Assets\OVR\Editor\OVRPluginUpdaterStub.cs" />
+    <Compile Include="Assets\OVR\Editor\OVRScreenshotWizard.cs" />
+    <Compile Include="Assets\OVR\Scripts\Editor\OVRManagerEditor.cs" />
+    <Compile Include="Assets\OVRAudioManager\Scripts\Audio\Editor\AudioImportPostProcessor.cs" />
+    <Compile Include="Assets\OVRAudioManager\Scripts\Audio\Editor\AudioManagerInspector.cs" />
+    <Compile Include="Assets\OVRAudioManager\Scripts\Audio\Editor\MinMaxPropertyDrawer.cs" />
+    <Compile Include="Assets\OVRAudioManager\Scripts\Audio\Editor\MixerSnapshotPropertyDrawer.cs" />
+    <Compile Include="Assets\OVRAudioManager\Scripts\Audio\Editor\OSPPropsPropertyDrawer.cs" />
+    <Compile Include="Assets\OVRAudioManager\Scripts\Audio\Editor\SoundFXPropertyDrawer.cs" />
+    <Compile Include="Assets\OVRAudioManager\Scripts\Audio\Editor\SoundFXRefPropertyDrawer.cs" />
+    <Compile Include="Assets\OVRAudioManager\Scripts\Utils\Editor\DrawerInspectorNote.cs" />
+    <Compile Include="Assets\OvrAvatar\Editor\AvatarMaterialEditor.cs" />
     <Compile Include="Assets\Scripts\Editor\GroupSettingsEditor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\LICENSE.txt" />
+    <None Include="Assets\OSPNative\LICENSE.txt" />
+    <None Include="Assets\OSPNative\THIRD_PARTY_NOTICES.txt" />
+    <None Include="Assets\OVR\Editor\AndroidManifest.OVRSubmission.xml" />
+    <None Include="Assets\OVR\LICENSE.txt" />
+    <None Include="Assets\OVR\Plugins\placeholder.txt" />
+    <None Include="Assets\OVR\Resources\Alpha Premultiply.shader" />
+    <None Include="Assets\OVR\Resources\OVRMRCameraFrame.shader" />
+    <None Include="Assets\OVR\Resources\OVRMRCameraFrameLit.shader" />
+    <None Include="Assets\OVR\Resources\OVRMRChromaKey.cginc" />
+    <None Include="Assets\OVR\Resources\OVRMRClipPlane.shader" />
+    <None Include="Assets\OVR\Resources\OVRMRUnlit.shader" />
+    <None Include="Assets\OVR\Resources\OVRMRUnlitTransparent.shader" />
+    <None Include="Assets\OVR\Resources\Underlay Impostor.shader" />
+    <None Include="Assets\OVR\Resources\Underlay Transparent Occluder.shader" />
+    <None Include="Assets\OVR\Resources\Unlit Transparent Color.shader" />
+    <None Include="Assets\OVR\Shaders\OVRColorRampAlpha.shader" />
+    <None Include="Assets\OVR\Shaders\Unlit Crosshair.shader" />
+    <None Include="Assets\OVR\THIRD_PARTY_NOTICES.txt" />
+    <None Include="Assets\OculusPlatform\LICENSE.txt" />
+    <None Include="Assets\OculusPlatform\THIRD_PARTY_NOTICES.txt" />
+    <None Include="Assets\OvrAvatar\Content\Materials\AvatarMaterialStateShader.cginc" />
+    <None Include="Assets\OvrAvatar\Content\Materials\AvatarSurfaceShader.shader" />
+    <None Include="Assets\OvrAvatar\Content\Materials\AvatarSurfaceShaderPBS.shader" />
+    <None Include="Assets\OvrAvatar\Content\Materials\AvatarSurfaceShaderSelfOccluding.shader" />
+    <None Include="Assets\OvrAvatar\LICENSE.txt" />
+    <None Include="Assets\OvrAvatar\Samples\SocialStarter\README.txt" />
+    <None Include="Assets\OvrAvatar\THIRD_PARTY_NOTICES.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
