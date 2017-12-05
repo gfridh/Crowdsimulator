@@ -78,7 +78,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\DataClasses\Group.cs" />
+    <Compile Include="Assets\Scripts\CsvWriter.cs" />
     <Compile Include="Assets\Scripts\Generators\GroupGenerator.cs" />
     <Compile Include="Assets\Scripts\Managers\SimulationManager.cs" />
     <Compile Include="Assets\Scripts\RandomGenerator.cs" />

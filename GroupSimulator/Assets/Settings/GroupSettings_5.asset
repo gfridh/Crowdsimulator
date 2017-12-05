@@ -11,8 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f5fd4ebacfcd6e42b59fed9486c6741, type: 3}
   m_Name: GroupSettings_5
   m_EditorClassIdentifier: 
-  numberOfGroups: 1
-  noiseIntensity: 9
-  membersInGroups: 7
-  orientationVariance: 45
-  interGroupDistance: 93
+  membersInGroups: 3
+  orientationVariance: 0
+  interGroupDistance: 1
