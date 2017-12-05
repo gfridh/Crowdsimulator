@@ -18,6 +18,7 @@ public class SimulationManager : MonoBehaviour {
     private CsvWriter dataWriter;
     private bool testIsRunning;
 
+
     public bool TestIsRunning { get { return testIsRunning; } }
 
     void Awake() {
