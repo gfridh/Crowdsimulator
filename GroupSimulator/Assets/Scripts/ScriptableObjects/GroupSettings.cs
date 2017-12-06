@@ -20,6 +20,9 @@ public class GroupSettings : ScriptableObject {
     [Tooltip("The arc in degrees the group is standing in")]
     [SerializeField, Range(0, 360f)] protected float groupArc;
 
+    [Tooltip("Enables the scale factor, which determine the orientation strenght depending on the oosition of the actor")]
+    [SerializeField] protected bool scaleFactor;
+
     // The action to fire if we changed the values of this object, to be able to update the visuals live in the simulation
     public event Action OnValuesChanged;
 
@@ -49,4 +52,8 @@ public class GroupSettings : ScriptableObject {
     /// The arc in degrees the group is standing in
     /// </summary>
     public float GroupArc { get { return groupArc; } }
+    /// <summary>
+    /// Enables the scale factor, which determine the orientation strenght depending on the oosition of the actor
+    /// </summary>
+    public bool ScaleFactor { get { return scaleFactor; } }
 }

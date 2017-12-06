@@ -129,6 +129,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\characters\AllStarCharacterLibray\Scripts\Editor\TurnOffRenderers.cs" />
     <Compile Include="Assets\OculusPlatform\Editor\GUIHelper.cs" />
     <Compile Include="Assets\OculusPlatform\Editor\OculusPlatformSettingsEditor.cs" />
     <Compile Include="Assets\OSPNative\editor\ONSPAudioSourceEditor.cs" />

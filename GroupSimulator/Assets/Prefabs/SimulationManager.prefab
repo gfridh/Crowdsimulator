@@ -96,6 +96,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groupParent: {fileID: 4993380755891780}
-  humanPrefab: {fileID: 1392251784496092, guid: 68907ce7d18b1754e948637dd2226949,
-    type: 2}
+  humanPrefab:
+  - {fileID: 1809349093109040, guid: d87a94a2e986b4a6e951830f89f8a83d, type: 2}
+  - {fileID: 1126300792707180, guid: e50c918c242a34716be4a0fa0ef21e96, type: 2}
+  - {fileID: 1486346278348512, guid: 53cf5b277205c45bea5758fca2fe2aa3, type: 2}
+  - {fileID: 1003495958285638, guid: 873a64abce166494cb79857695a4ae2d, type: 2}
   enableScaleFactor: 1
+  settingsReference: {fileID: 0}

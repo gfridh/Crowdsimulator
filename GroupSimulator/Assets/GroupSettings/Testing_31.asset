@@ -11,7 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f5fd4ebacfcd6e42b59fed9486c6741, type: 3}
   m_Name: Testing_31
   m_EditorClassIdentifier: 
-  membersInGroups: 4
-  orientationVariance: 20
+  membersInGroups: 3
+  orientationVariance: -59.4
   interGroupDistance: 1
-  groupArc: 360
+  groupArc: 240
+  scaleFactor: 1

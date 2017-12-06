@@ -15,3 +15,4 @@ MonoBehaviour:
   orientationVariance: 20
   interGroupDistance: 2
   groupArc: 180
+  scaleFactor: 1

@@ -5,23 +5,28 @@ using UnityEngine;
 public class GroupGenerator : MonoBehaviour {
 
     [SerializeField] private Transform groupParent;
-    [SerializeField] private GameObject humanPrefab;
-
-    [SerializeField] private bool enableScaleFactor;
-
+    [SerializeField] private List<GameObject> humanPrefab;
 
     [SerializeField] private GroupSettings settingsReference;
 
+    private RandomGenerator randomGenerator;
 
+
+    public void Start () {
+        randomGenerator = new RandomGenerator(123123);
+    }
 
     public void GenerateGroups(GroupSettings settings) {
+        if(Application.isEditor)
+            randomGenerator = new RandomGenerator(123123);
+
 
         settingsReference = settings;
 
         // First we create the humans in their correct posisions
         for (int i = 0; i < settings.MembersInGroups; i++) {
 
-            GameObject newHuman = (GameObject)Instantiate(humanPrefab, groupParent);
+            GameObject newHuman = (GameObject)Instantiate(humanPrefab[randomGenerator.Range(0, humanPrefab.Count)], groupParent);
 
             // The humans should fill the group arc
             newHuman.transform.localPosition = Quaternion.Euler(0, (-(settings.GroupArc / 2f) + (settings.GroupArc / (settings.MembersInGroups )) * i)  + settings.GroupArc / (2 * settings.MembersInGroups), 0) * (Vector3.forward * settings.InterGroupDistance);
@@ -32,7 +37,7 @@ public class GroupGenerator : MonoBehaviour {
             // Then we make the rotations correct with regards to orientation variance
             // 1: We scale the effects depending on the humans position in the circle
             // 2: Then we also check the direction to see if we should invert the angle on the opposite sides of the circle
-            float scaleFactor = (enableScaleFactor) ? Vector3.Angle(Vector3.forward, (newHuman.transform.position - groupParent.transform.position)) / 90f : 1f;
+            float scaleFactor = (settings.ScaleFactor) ? Mathf.Clamp(Vector3.Angle(Vector3.forward, (newHuman.transform.position - groupParent.transform.position)) / 90f, 0, 1f) : 1f;
             float directionFactor = (Quaternion.FromToRotation(Vector3.forward, (groupParent.transform.position - newHuman.transform.position)).eulerAngles.y < 180) ? -1f : 1f;
 
             rot.y += (settings.OrientationVariance * scaleFactor * directionFactor);
