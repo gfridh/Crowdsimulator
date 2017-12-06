@@ -17,8 +17,8 @@ public class GroupGenerator : MonoBehaviour {
     }
 
     public void GenerateGroups(GroupSettings settings) {
-        if(Application.isEditor)
-            randomGenerator = new RandomGenerator(123123);
+        //if(Application.isEditor)
+            //randomGenerator = new RandomGenerator(123123);
 
 
         settingsReference = settings;

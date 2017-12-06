@@ -84,7 +84,7 @@ public class SimulationManager : MonoBehaviour {
             Debug.Log("Testing is DONE. Writing data to file");
             dataWriter.WriteToFile();
             testIsRunning = false;
-            testerCamera.transform.position = new Vector3(0f, 0f, -5f);
+			testerCamera.transform.position = new Vector3(testerCamera.transform.position.x, testerCamera.transform.position.y, -5f);
             groupGenerator.ClearGroups();
         }
     }

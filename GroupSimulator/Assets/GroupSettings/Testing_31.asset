@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Testing_31
   m_EditorClassIdentifier: 
   membersInGroups: 3
-  orientationVariance: -59.4
+  orientationVariance: 80
   interGroupDistance: 1
-  groupArc: 240
-  scaleFactor: 1
+  groupArc: 219
+  scaleFactor: 0
