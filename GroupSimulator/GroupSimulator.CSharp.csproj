@@ -271,9 +271,11 @@
     <Compile Include="Assets\OvrAvatar\Scripts\OvrAvatarTouchController.cs" />
     <Compile Include="Assets\Scripts\CsvWriter.cs" />
     <Compile Include="Assets\Scripts\Generators\GroupGenerator.cs" />
+    <Compile Include="Assets\Scripts\ListWrapper.cs" />
     <Compile Include="Assets\Scripts\Managers\SimulationManager.cs" />
     <Compile Include="Assets\Scripts\RandomGenerator.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\GroupSettings.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObjects\LatinSquare.cs" />
     <Compile Include="Assets\Scripts\TesterCamera.cs" />
   </ItemGroup>
   <ItemGroup>

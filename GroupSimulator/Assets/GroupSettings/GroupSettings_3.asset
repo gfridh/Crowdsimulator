@@ -13,6 +13,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   membersInGroups: 3
   orientationVariance: 0
-  interGroupDistance: 1
-  groupArc: 360
-  scaleFactor: 0
+  interGroupDistance: 0.8
+  groupArc: 140
+  normalizeMiddle: 1

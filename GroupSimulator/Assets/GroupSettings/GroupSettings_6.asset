@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: GroupSettings_6
   m_EditorClassIdentifier: 
   membersInGroups: 3
-  orientationVariance: 0
-  interGroupDistance: 2
-  groupArc: 360
-  scaleFactor: 0
+  orientationVariance: 40
+  interGroupDistance: 0.8
+  groupArc: 180
+  normalizeMiddle: 1

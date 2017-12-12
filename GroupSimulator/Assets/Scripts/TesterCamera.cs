@@ -21,8 +21,6 @@ public class TesterCamera : MonoBehaviour {
                 SimulationManager.instance.NextScenario(Vector3.Distance(transform.position, groupParent.position), 4);
             } else if (Input.GetKeyDown(KeyCode.Alpha5)) {
                 SimulationManager.instance.NextScenario(Vector3.Distance(transform.position, groupParent.position), 5);
-			} else if (Input.GetKeyDown(KeyCode.Alpha0)) {
-				SimulationManager.instance.NextScenario(Vector3.Distance(transform.position, groupParent.position), 0);
 			}
         }
     }

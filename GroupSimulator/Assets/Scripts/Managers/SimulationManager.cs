@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class SimulationManager : MonoBehaviour {
 
     // We set up singleton behaviour
@@ -11,6 +12,7 @@ public class SimulationManager : MonoBehaviour {
     // This is the list of scenarios our test will go through in a testing session
     [SerializeField] private List<GroupSettings> scenarios = new List<GroupSettings>();
     [SerializeField] private Transform testerCamera;
+    [SerializeField] private LatinSquare latin;
 
     // Internal references:
     private GroupGenerator groupGenerator;
@@ -45,6 +47,9 @@ public class SimulationManager : MonoBehaviour {
             Debug.LogError("Could not find the GroupGenerator on this gameobject");
         }
 
+        latin.GenerateLatinSquare();
+
+
         Debug.Log("Session has started. Press SPACEBAR to start the scenarios");
     }
 
@@ -63,9 +68,10 @@ public class SimulationManager : MonoBehaviour {
         testerCamera.transform.position = new Vector3(0f, 0f, -5f);
         scenarioStarts = DateTime.Now;
         int index = randomGenerator.Range(0, scenarios.Count);
-        groupGenerator.GenerateGroups(scenarios[index]);
-        currentSettings = scenarios[index];
-        scenarios.RemoveAt(index);
+
+        var settings = latin.GetNextScenario();
+        groupGenerator.GenerateGroups(settings);
+        currentSettings = settings;
     }
 
     /// <summary>
@@ -74,7 +80,7 @@ public class SimulationManager : MonoBehaviour {
     public void NextScenario(float distance, int welcomeFactor) {
         dataWriter.SaveRow(currentSettings, distance, welcomeFactor, (float)(DateTime.Now - scenarioStarts).TotalSeconds);
 
-        if (scenarios.Count > 0) {
+        if (latin.TestLeft() > 0) {
             // First we clear then we create new groups
             groupGenerator.ClearGroups();
             StartSimulation();
