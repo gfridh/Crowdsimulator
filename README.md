@@ -1,12 +1,6 @@
-# High Density Crowd Simulation with Crowd Formations
+# Small group formations of virtual characters using a 3D game engine
+A group formation generator application made in Unity for testing the perception of different group formation in virtual reality.
 
-Degree Project in Computer Science, Master of Science
-A crowd simulation utilizing high-density features to effectively simulate thousands of crowd agents in real time.
+For any questions regarding the code and how to use the application, you can contact me Hannes Westberg at <hannesve@kth.se>.
 
 * [Unity](https://unity3d.com/) - Game Engine Used
-
-## Author
-
-* **Jack Shabo** 
-
-Copyright - All rights reserved
